@@ -3,7 +3,7 @@ go impl mock any variable, i use this on unit test, and love it so much. pls may
 
 
 ## before this package
-```
+```golang
 old := symbol
 symbol = "Destroy World!"
 defer func() {
