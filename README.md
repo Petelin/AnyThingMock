@@ -3,7 +3,7 @@ go impl mock any variable
 
 useage
 
-```
+```golang
 package mock
 
 import "fmt"
