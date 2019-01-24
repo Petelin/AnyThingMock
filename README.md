@@ -1,7 +1,21 @@
 # AnyThingMock
-go impl mock any variable
+go impl mock any variable, i use this on unit test, and love it so much. pls may sure mock type of variable is same as origin one. otherwise it will panic.
 
-useage
+
+## before this package
+```
+old := symbol
+symbol = "Destroy World!"
+defer func() {
+	symbol = old
+}()
+
+// new way to write
+rec := new(Mock).On(&symbol, "Destroy World!")
+defer rec()
+```
+
+## useage
 
 ```golang
 package mock
@@ -26,6 +40,16 @@ func printAll() {
 	fmt.Println("---------")
 }
 
+func TestMockOne(t *testing.T)  {
+	fmt.Println("raw value: ", symbol)
+
+	rec := new(Mock).On(&symbol, "Destroy World!")
+	fmt.Println("moc value: ", symbol)
+
+	rec()
+	fmt.Println("rec value: ", symbol)
+}
+
 func TestMock(t *testing.T) {
 	fmt.Println("raw value:")
 	printAll()
@@ -41,15 +65,5 @@ func TestMock(t *testing.T) {
 	mock.Recover()
 	fmt.Println("recover value:")
 	printAll()
-}
-
-func TestMockOne(t *testing.T)  {
-	fmt.Println("raw value: ", symbol)
-
-	rec := new(Mock).On(&symbol, "Destroy World!")
-	fmt.Println("moc value: ", symbol)
-
-	rec()
-	fmt.Println("rec value: ", symbol)
 }
 ```
