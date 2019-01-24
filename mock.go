@@ -1,3 +1,5 @@
+package Mock
+
 type Mock struct {
 	innerRec []func()
 }
