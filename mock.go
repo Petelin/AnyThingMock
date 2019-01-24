@@ -1,5 +1,7 @@
 package Mock
 
+import "reflect"
+
 type Mock struct {
 	innerRec []func()
 }
