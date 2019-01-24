@@ -16,7 +16,7 @@ func (m *Mock) On(item interface{}, new interface{}) *Mock {
 	return m
 }
 
-func (m *Mock) Recover(item interface{}, new interface{}) {
+func (m *Mock) Recover() {
 	for _, f := range m.innerRec {
 		f()
 	}
