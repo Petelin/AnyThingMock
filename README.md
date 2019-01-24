@@ -67,3 +67,4 @@ func TestMock(t *testing.T) {
 	printAll()
 }
 ```
+
