@@ -1,5 +1,5 @@
 # AnyThingMock
-go impl mock any variable, i use this on unit test, and love it so much. pls may sure mock type of variable is same as origin one. otherwise it will panic.
+Go impl mock any variable, i use this on unit test, and love it so much. Please make sure mock type of variable is same as origin one. otherwise it will panic.
 
 https://godoc.org/github.com/Petelin/AnyThingMock
 
